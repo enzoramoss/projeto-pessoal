@@ -1,15 +1,4 @@
 const name = prompt("Qual é o seu nome?")
-let weight
-
-while (true) {
-    weight = parseFloat(prompt("Qual é o seu peso (em kg)?"))
-    if (weight > 0) {
-        break
-    } else {
-        alert("Por favor, insira um peso válido (número positivo).")
-    }
-}
-
 let toContinue = true
 
 do {
@@ -17,11 +6,25 @@ do {
 
     switch (option) {
         case '1':
+            let weight = parseFloat(prompt("Qual é o seu peso (em kg)?"))
             let carbohydratesPerKg = 1.5 // Quantidade recomendada máxima
             let totalCarbohydrates = weight * carbohydratesPerKg // Total em gramas
             let calories = totalCarbohydrates * 4 // Cada grama de carboidrato tem 4 calorias
 
             alert(`Após a prática esportiva, ${name}, você deve ingerir:\n${totalCarbohydrates.toFixed(2)} g de carboidratos,\nque equivalem a ${calories.toFixed(2)} calorias.`)
+
+            let carbohydratesIntake = prompt("Você gostaria de calcular uma ingestão de carboidratos diferente? (S/N)").toUpperCase()
+            if (carbohydratesIntake === 'S') {
+                let newValue = parseFloat(prompt("Quantos gramas de carboidratos por kg você deseja usar?"))
+                let totalCarbohydratesPersonalized = weight * newValue
+                let caloriesPersonalized = totalCarbohydratesPersonalized * 4
+
+                alert(`Você deve ingerir:\n${totalCarbohydratesPersonalized.toFixed(2)} g de carboidratos,\nque equivalem a ${caloriesPersonalized.toFixed(2)} calorias.`)
+            } else if (carbohydratesIntake === 'N') {
+                alert("Continuando com o cálculo padrão.")
+            } else {
+                alert("Opção inválida. Retornando ao menu.")
+            }
             break
 
         case '2':
@@ -63,21 +66,6 @@ do {
 
         default:
             alert("Opção inválida. Tente novamente.")
-    }
-
-    if (option === '1') {
-        let carbohydratesIntake = prompt("Você gostaria de calcular uma ingestão de carboidratos diferente? (S/N)").toUpperCase()
-        if (carbohydratesIntake === 'S') {
-            let newValue = parseFloat(prompt("Quantos gramas de carboidratos por kg você deseja usar?"))
-            let totalCarbohydratesPersonalized = weight * newValue
-            let caloriesPersonalized = totalCarbohydratesPersonalized * 4
-
-            alert(`Você deve ingerir:\n${totalCarbohydratesPersonalized.toFixed(2)} g de carboidratos,\nque equivalem a ${caloriesPersonalized.toFixed(2)} calorias.`)
-        } else if (carbohydratesIntake === 'N') {
-            alert("Continuando com o cálculo padrão.")
-        } else {
-            alert("Opção inválida. Retornando ao menu.")
-        }
     }
 
 } while (toContinue)
