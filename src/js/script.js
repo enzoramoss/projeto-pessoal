@@ -3,10 +3,8 @@ function swithTheme() {
     document.body.classList.toggle('is-dark')
 }
 
-// Adicionar os eventos
 document.getElementById('swithchThemeBtn').addEventListener('click', swithTheme)
 
-// Adicionar evento para os nomes dos carros
 document.querySelectorAll('.carro h2').forEach(carro => {
     carro.addEventListener('click', function() {
         if (this.textContent === 'Onix') {
@@ -18,4 +16,3 @@ document.querySelectorAll('.carro h2').forEach(carro => {
         }
     })
 })
-
