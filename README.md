@@ -1,3 +1,1 @@
-# teste-projeto-pessoal
-
-obrigado pela ajuda, Enzo!
+# Projeto Pessoal de Programação Web do primeiro bimestre de 2025
