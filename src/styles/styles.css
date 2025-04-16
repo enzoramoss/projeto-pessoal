@@ -1,0 +1,109 @@
+:root {
+    --black: #030303;
+    --gray: #858585;
+    --white: #ffffff;
+    --light-green: #00FF00;
+    --dark-green: #008000;
+    --button-green: #001a00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.is-light {
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --button-color: var(--button-green);
+    --button-text-color: var(--white);
+}
+
+.is-dark {
+    --background-color: var(--black);
+    --text-color: var(--white);
+    --button-color: var(--button-green);
+    --button-text-color: var(--white);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topbar {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.carro {
+    background-color: var(--gray);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.carro .description {
+    padding: 10px;
+    margin: 10px;
+    text-align: justify;
+}
+
+.carro img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    opacity: 0.8;
+}
+
+footer {
+    background-color: var(--dark-green);
+    color: var(--black);
+    padding: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
